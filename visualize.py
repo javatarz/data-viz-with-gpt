@@ -22,7 +22,7 @@ def _create_viz_message(df: DataFrame, query: str, csv_path: str) -> str:
     
     You have pandas, numpy, plotly available to you.
     
-    Write python code that visualizes the dataframe as a {query} for the top 100 values
+    Write python code that visualizes the dataframe as a {query}
     """
     return prompt
 
