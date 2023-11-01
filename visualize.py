@@ -22,7 +22,9 @@ def _create_viz_message(df: DataFrame, query: str, csv_path: str) -> str:
     
     You have pandas, numpy, plotly available to you.
     
-    Write python code that visualizes the dataframe as a {query}
+    Write python code that visualizes the dataframe in a way that answers the following question: {query}
+    
+    Return only python code, no need to print anything.
     """
     return prompt
 
@@ -54,5 +56,7 @@ def visualize(df: DataFrame, query: str, api_key: str) -> None:
     response = code_to_visualize(df=df, query=query, api_key=api_key)
     print(f'Usage for {visualize.__name__}: {response.open_ai_response["usage"]}')
 
-    print(response.code)
+    print('---------------')
+    print(f'{response.code=}')
+    print('---------------')
     exec(response.code)

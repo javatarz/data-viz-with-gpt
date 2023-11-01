@@ -110,5 +110,8 @@ def run_query(query: str, api_key: str) -> DataFrame:
     response = lang2sql(api_key=api_key, query=query)
     print(f'Usage for {run_query.__name__}: {response.open_ai_response["usage"]}')
 
-    print(response.sql)
+    print('---------------')
+    print(f'{response.sql=}')
+    print('---------------')
+
     return duckdb.sql(response.sql).df()

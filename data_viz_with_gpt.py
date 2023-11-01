@@ -11,7 +11,7 @@ def parse_args() -> Namespace:
     parser = ArgumentParser(description='Visualise the data from the database using ChatGPT')
 
     parser.add_argument('--data-query', help='Question for the system to answer', required=True)
-    parser.add_argument('--viz-query', help='Prompt on how to visualize the data', required=True)
+    parser.add_argument('--viz-query', help='Prompt on how to visualize the data', default="")
     parser.add_argument('--data-dir', help='Directory to load CSVs from', default='data')
     parser.add_argument('--api-key', help='ChatGPT API key', default=os.environ.get('CHATGPT_API_KEY'))
 

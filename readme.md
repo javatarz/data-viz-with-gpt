@@ -12,18 +12,12 @@ CHATGPT_API_KEY=<api key here> poetry run python data_viz_with_gpt.py --data-que
 
 ## Sample queries
 ### Working
-* "How many unique people affiliations do we have?"
-* "How many people do we have data for every affiliation name?"
-* "How many unique titles (in relationship table) do you have for every affiliation name (from people table)?"
-* "How many unique affiliation names (from people table) do you have for every title (from relationship table)?"
-* "How many unique affiliations (from people table) do you have for every title (from relationship table)?"
-* "How many unique affiliations do people have for every relationship title? Please give me the top 100 results."
+* --data-query "How many unique people affiliations do we have?"
+* --data-query "How many people do we have data for every affiliation name?"
+* --data-query "How many unique titles (in relationship table) do you have for every affiliation name (from people table)? Please give me the top 10 results."
+* --data-query "How many unique affiliations do people have for every relationship title? Please give me the top 10 results."
+* --data-query "How many unique affiliations do people have for every relationship title? Please give me the top 10 results." --viz-query "how much share does each title have?"
 
 ### Not Working
-* "How many unique affiliations do people have for every title from a relationship?" - no query is built
-* "How many unique people affiliations do we have for every relationship title?" - generates incorrect query
-
-## Sample visualisations
-* bar chart
-* pie chart
-* line chart
+* --data-query "How many unique affiliations do people have for every title from a relationship?" - no query is built
+* --data-query "How many unique people affiliations do we have for every relationship title?" - generates incorrect query
