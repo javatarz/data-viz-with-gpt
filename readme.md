@@ -2,6 +2,16 @@
 
 A tool to query multiple datasets and visualize them using GPT-3.5
 
+## Setup
+```bash
+# (Optional) install pyenv
+pip install pyenv
+# (Optional) if you don't have the correct version of pyenv
+pyenv install $(cat .python-version)
+# install poetry if pyenv was just installed
+pip install poetry
+poetry install
+```
 ## How to run?
 
 Step 1. Download the data the URL mentioned at `data/source.txt` and extract it into the `data` folder
