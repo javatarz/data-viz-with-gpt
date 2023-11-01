@@ -3,6 +3,7 @@ from argparse import Namespace, ArgumentParser
 
 from load_to_db import load_files_as_tables
 from query import run_query
+from timers import timer
 from visualize import visualize
 
 
@@ -18,6 +19,7 @@ def parse_args() -> Namespace:
     return parser.parse_args()
 
 
+@timer
 def run() -> None:
     args = parse_args()
     load_files_as_tables(args.data_dir)

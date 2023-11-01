@@ -2,6 +2,8 @@ import os
 
 import duckdb
 
+from timers import timer
+
 
 def _list_files_in_dir(data_dir: str) -> list:
     return [
@@ -16,6 +18,7 @@ def _load_file_as_table(file_path: str) -> None:
     duckdb.sql(f"CREATE TABLE {table_name} AS SELECT * FROM read_csv_auto('{file_path}');")
 
 
+@timer
 def load_files_as_tables(data_dir: str) -> None:
     for f in _list_files_in_dir(data_dir):
         _load_file_as_table(f)

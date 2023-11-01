@@ -4,6 +4,8 @@ import openai
 from openai.openai_object import OpenAIObject
 from pandas import DataFrame
 
+from timers import timer
+
 
 @dataclass
 class Response:
@@ -24,6 +26,7 @@ def _create_viz_message(df: DataFrame, query: str) -> str:
     return prompt
 
 
+@timer
 def code_to_visualize(df: DataFrame, query: str, api_key: str, model: str = "gpt-3.5-turbo-instruct",
                       temperature: int = 0, max_tokens: int = 256, top_p: int = 1, frequency_penalty: int = 0,
                       presence_penalty: int = 0) -> Response:
@@ -42,6 +45,7 @@ def code_to_visualize(df: DataFrame, query: str, api_key: str, model: str = "gpt
     return Response(prompt, openai_response, openai_response["choices"][0]["text"])
 
 
+@timer
 def visualize(df: DataFrame, query: str, api_key: str) -> None:
     response = code_to_visualize(df=df, query=query, api_key=api_key)
     print(f'Usage for {visualize.__name__}: {response.open_ai_response["usage"]}')

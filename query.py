@@ -5,6 +5,8 @@ import openai
 from openai.openai_object import OpenAIObject
 from pandas import DataFrame
 
+from timers import timer
+
 
 @dataclass
 class Message:
@@ -46,6 +48,7 @@ def _add_quotes_to_query(query, col_names):
     return query
 
 
+@timer
 def lang2sql(api_key: str, table_name: str, query: str, model: str = "gpt-3.5-turbo", temperature: int = 0,
              max_tokens: int = 256, top_p: int = 1, frequency_penalty: int = 0, presence_penalty: int = 0) -> Response:
     openai.api_key = api_key
@@ -80,6 +83,7 @@ def lang2sql(api_key: str, table_name: str, query: str, model: str = "gpt-3.5-tu
     return Response(request_message=m, open_ai_response=openai_response, sql=sql_query)
 
 
+@timer
 def run_query(query: str, table_name: str, api_key: str) -> DataFrame:
     response = lang2sql(api_key=api_key, table_name=table_name, query=query)
     print(f'Usage for {run_query.__name__}: {response.open_ai_response["usage"]}')
