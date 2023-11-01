@@ -1,5 +1,6 @@
 .idea/
 data/
+tmp/
 __pycache__/
 
 plot.png
