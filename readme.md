@@ -18,10 +18,12 @@ Step 1. Download the data the URL mentioned at `data/source.txt` and extract it 
 
 Step 2. Generate an [OpenAI API key](https://platform.openai.com/account/api-keys) (requires a paid account)
 
-Step 3. Run the command below
+Step 3. Copy `.env.example` to `.env` and add the API key to the `.env` file
+
+Step 4. Run the command below
 
 ```bash
-CHATGPT_API_KEY=<api key here> poetry run python data_viz_with_gpt.py --data-query <data-query> --viz-query <viz-query>
+poetry run python data_viz_with_gpt.py --data-query <data-query> --viz-query <viz-query>
 ```
 
 ## Sample queries
