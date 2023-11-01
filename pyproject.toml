@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "gpt-data-viz"
+version = "0.0.1"
+description = "ChatGPT powered data visualisations"
+authors = ["Karun Japhet <karun@japhet.in>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+duckdb = "^0.9.1"
+openai = "^0.28.1"
+numpy = "^1.26.1"
+pandas = "^2.1.2"
+matplotlib = "^3.8.1"
+seaborn = "^0.13.0"
+plotly = "^5.18.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
