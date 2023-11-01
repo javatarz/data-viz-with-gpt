@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "gpt-data-viz"
+name = "data-viz-with-gpt"
 version = "0.0.1"
 description = "ChatGPT powered data visualisations"
 authors = ["Karun Japhet <karun@japhet.in>"]
