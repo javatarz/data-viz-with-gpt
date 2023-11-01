@@ -1,5 +1,9 @@
 # Data Visualisation using GPT
 
+A tool to query multiple datasets and visualize them using GPT-3.5
+
+## How to run?
+
 Step 1. Download the data the URL mentioned at `data/source.txt` and extract it into the `data` folder
 
 Step 2. Generate an [OpenAI API key](https://platform.openai.com/account/api-keys) (requires a paid account)
