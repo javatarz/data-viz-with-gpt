@@ -5,7 +5,7 @@ import openai
 from openai.openai_object import OpenAIObject
 from pandas import DataFrame
 
-from timers import timer
+from gpt_data_viz.timers import timer
 
 
 @dataclass

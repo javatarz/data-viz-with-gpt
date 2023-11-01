@@ -1,10 +1,10 @@
 import os
 from argparse import Namespace, ArgumentParser
 
-from load_to_db import load_files_as_tables
-from query import run_query
-from timers import timer
-from visualize import visualize
+from gpt_data_viz.load_to_db import load_files_as_tables
+from gpt_data_viz.query import run_query
+from gpt_data_viz.timers import timer
+from gpt_data_viz.visualize import visualize
 
 
 def parse_args() -> Namespace:

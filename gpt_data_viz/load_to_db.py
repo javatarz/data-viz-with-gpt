@@ -2,7 +2,7 @@ import os
 
 import duckdb
 
-from timers import timer
+from gpt_data_viz.timers import timer
 
 
 def _list_files_in_dir(data_dir: str) -> list:
